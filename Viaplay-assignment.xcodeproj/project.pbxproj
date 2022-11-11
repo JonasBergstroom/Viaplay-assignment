@@ -51,6 +51,9 @@
 		2E550876291E844500006F49 /* Viaplay-assignment */ = {
 			isa = PBXGroup;
 			children = (
+				2ECF3069291E84DE00A6D2D5 /* Model */,
+				2ECF306A291E84E700A6D2D5 /* ViewModel */,
+				2ECF306B291E84EF00A6D2D5 /* View */,
 				2E550877291E844500006F49 /* Viaplay_assignmentApp.swift */,
 				2E550879291E844500006F49 /* ContentView.swift */,
 				2E55087B291E844900006F49 /* Assets.xcassets */,
@@ -65,6 +68,27 @@
 				2E55087E291E844900006F49 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2ECF3069291E84DE00A6D2D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2ECF306A291E84E700A6D2D5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2ECF306B291E84EF00A6D2D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

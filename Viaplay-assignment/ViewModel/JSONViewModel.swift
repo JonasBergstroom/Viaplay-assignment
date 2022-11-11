@@ -30,6 +30,8 @@ class JSONViewModel: ObservableObject {
             if response.statusCode == 200 {
                 do {
                     let response = try JSONDecoder().decode(ViaplayResponse.self, from: jsonData)
+                    UserDefaults.standard.set(response, forKey: "viaplay")
+                    // Sets the ViaplayResponse data to the UserDefaults
                     DispatchQueue.main.async {
                         self.response = response
                     }

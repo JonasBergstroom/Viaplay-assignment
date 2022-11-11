@@ -20,6 +20,9 @@ struct Home: View {
             else {
                 List(UserDefaults.standard.get(forKey: "viaplay")?._links.viaplaySections ?? jsonModel.response._links.viaplaySections,id: \.self){section in
                     TitleView(title: section)
+                }.environment(\.defaultMinListRowHeight, 150)
+                .onAppear() {
+                    UITableView.appearance().backgroundColor = UIColor.clear
                 }
                 .padding()
                 .clipShape(RoundedRectangle(cornerRadius: 10))

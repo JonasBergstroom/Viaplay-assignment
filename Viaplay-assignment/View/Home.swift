@@ -11,14 +11,14 @@ struct Home: View {
     @StateObject var jsonModel = JSONViewModel()
     var body: some View {
         VStack {
-            if jsonModel.response._links.viaplaySections.isEmpty {
+            if(UserDefaults.standard.get(forKey: "viaplay")?._links.viaplaySections ?? []).isEmpty{
                 ProgressView()
                     .onAppear(perform:  {
                         jsonModel.fetchData()
                     })
             }
             else {
-                List(jsonModel.response._links.viaplaySections,id: \.self){section in
+                List(UserDefaults.standard.get(forKey: "viaplay")?._links.viaplaySections ?? jsonModel.response._links.viaplaySections,id: \.self){section in
                     TitleView(title: section)
                 }
                 .padding()

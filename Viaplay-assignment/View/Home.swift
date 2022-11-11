@@ -8,13 +8,24 @@
 import SwiftUI
 
 struct Home: View {
+    @StateObject var jsonModel = JSONViewModel()
     var body: some View {
-        
         VStack {
-            List(){
-                
-                // Will display the fetched JSON Data
+            if jsonModel.response._links.viaplaySections.isEmpty {
+                ProgressView()
+                    .onAppear(perform:  {
+                        jsonModel.fetchData()
+                    })
+            }
+            else {
+                List(jsonModel.response._links.viaplaySections,id: \.self){section in
+                    TitleView(title: section)
+                }
+                .padding()
+                .clipShape(RoundedRectangle(cornerRadius: 10))
             }
         }
+        .navigationTitle("Viaplay")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }

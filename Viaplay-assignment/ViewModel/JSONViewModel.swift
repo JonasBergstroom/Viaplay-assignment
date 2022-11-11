@@ -30,7 +30,6 @@ class JSONViewModel: ObservableObject {
             if response.statusCode == 200 {
                 do {
                     let response = try JSONDecoder().decode(ViaplayResponse.self, from: jsonData)
-                    print(response)
                     DispatchQueue.main.async {
                         self.response = response
                     }

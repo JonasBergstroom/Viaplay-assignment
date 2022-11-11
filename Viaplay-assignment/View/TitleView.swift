@@ -11,7 +11,6 @@ struct TitleView: View {
     var title: Section
     var body: some View {
         VStack(alignment: .leading, spacing: 10, content: {
-            
             Text(title.title)
                 .font(.title2)
                 .fontWeight(.heavy)

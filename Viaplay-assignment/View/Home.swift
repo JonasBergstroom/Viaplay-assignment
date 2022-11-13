@@ -21,7 +21,7 @@ struct Home: View {
                 List(UserDefaults.standard.get(forKey: "viaplay")?._links.viaplaySections ?? jsonModel.response._links.viaplaySections,id: \.self){section in
                     TitleView(title: section)
                 }.environment(\.defaultMinListRowHeight, 150)
-                    .background(Image("imagebg"))
+                     
                 .onAppear() {
                     UITableView.appearance().backgroundColor = UIColor.clear
                 }
@@ -31,5 +31,6 @@ struct Home: View {
         }
         .navigationTitle("Välj kategori")
         .navigationBarTitleDisplayMode(.inline)
+        .background(Image("imagebg"))
     }
 }
